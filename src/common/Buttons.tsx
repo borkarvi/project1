@@ -4,17 +4,19 @@ import { NavLink } from 'react-router-dom';
 export interface ButtonMediumProps {
   label: string;
   bgColor: string;
+  btFun: () => void;
 }
- type LinkButtonType  = {
+
+export type LinkButtonType  = {
   bgColor: string,
   label: string,
   path: string
  }
 
-export const ButtonMedium: React.FC<ButtonMediumProps> = ({ label, bgColor }) => {
+export const ButtonMedium: React.FC<ButtonMediumProps> = ({ label, bgColor, btFun }) => {
   const cssClass = `px-4 py-2 rounded-md text-sm mr-2 ${bgColor}`
     return (
-    <button className={cssClass}>{label}</button>
+    <button onClick={btFun} className={cssClass}>{label}</button>
   );
 };
 

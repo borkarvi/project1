@@ -1,4 +1,4 @@
-import { createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const userStore = createSlice({
     name: 'userStore',
@@ -6,12 +6,12 @@ const userStore = createSlice({
         userData: {}
     },
     reducers: {
-            saveUser: (state , action) => {
-                console.log('action' , action)
-                state.userData = action.payload.userData
-            }
+        saveUser: (state, action) => {
+            console.log('action',action)
+            state.userData = action.payload.userData
+        }
     }
 });
 
-export const { saveUser} = userStore.actions;
+export const { saveUser } = userStore.actions;
 export default userStore;
